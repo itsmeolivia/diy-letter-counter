@@ -1,4 +1,7 @@
-console.log("it me")
+function isWhitespace (char) {
+  return /\s+/.test(char)
+}
+
 new Vue({
   el: document.body,
   data: {
@@ -9,6 +12,9 @@ new Vue({
       var dict = {}
       for (var i = 0; i < this.message.length; i++) {
         var char = this.message[i]
+
+        if (isWhitespace(char)) { continue }
+
         if (char in dict) {
           dict[char] += 1
         } else {
