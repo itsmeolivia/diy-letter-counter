@@ -5,13 +5,19 @@ function isWhitespace (char) {
 new Vue({
   el: document.body,
   data: {
-    message: ''
+    message: '',
+    isCaseSensitive: false
   },
   computed: {
     groups: function () {
+      var message = this.message
+      if (!this.isCaseSensitive) {
+        message = this.message.toUpperCase()
+      }
+
       var dict = {}
-      for (var i = 0; i < this.message.length; i++) {
-        var char = this.message[i]
+      for (var i = 0; i < message.length; i++) {
+        var char = message[i]
 
         if (isWhitespace(char)) { continue }
 

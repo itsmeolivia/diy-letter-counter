@@ -31,6 +31,15 @@
       <input type="text" class="form-control" placeholder="It's me" autofocus v-model="message">
     </div>
 
+    <div class="form-group">
+      <label class="checkbox-inline">
+        <input type="checkbox" v-model="isCaseSensitive"> Case sensitive?
+      </label>
+      <label class="checkbox-inline">
+        <input type="checkbox"> Remove punctuation?
+      </label>
+    </div>
+
     <table class="table table-striped">
       <thead>
         <tr>
