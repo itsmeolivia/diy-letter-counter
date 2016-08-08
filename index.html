@@ -26,7 +26,7 @@
     </div>
   </nav>
 
-  <form class="container">
+  <form class="container" @submit.prevent>
     <div class="form-group">
       <input type="text" class="form-control" placeholder="It's me" autofocus v-model="message">
     </div>
