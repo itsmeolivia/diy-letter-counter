@@ -14,7 +14,7 @@
     display: none;
   }
   */
-  
+
   </style>
 
 </head>
@@ -28,7 +28,7 @@
 
   <form class="container">
     <div class="form-group">
-      <input type="text" class="form-control lg" placeholder="It's me" autofocus>
+      <input type="text" class="form-control" placeholder="It's me" autofocus v-model="message">
     </div>
 
     <table class="table table-striped">
@@ -40,25 +40,16 @@
       </thead>
 
       <tbody v-cloak>
-        <tr>
-          <td>3</td>
-          <td>e</td>
-        </tr>
-
-        <tr>
-          <td>2</td>
-          <td>r, t</td>
-        </tr>
-
-        <tr>
-          <td>1</td>
-          <td>n, o, u, x, j</td>
+        <tr v-for="group in groups">
+          <td>{{ group.count }}</td>
+          <td>{{ group.letters.join(", ") }}</td>
         </tr>
       </tbody>
     </table>
   </form>
 
   <script src="vendor/vue.min.js"></script>
+  <script src="main.js"></script>
 
 </body>
 </html>
