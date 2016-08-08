@@ -2,11 +2,16 @@ function isWhitespace (char) {
   return /\s+/.test(char)
 }
 
+function isPunctuation (char) {
+  return /[^a-z0-9]/i.test(char)
+}
+
 new Vue({
   el: document.body,
   data: {
     message: '',
-    isCaseSensitive: false
+    isCaseSensitive: false,
+    shouldRemovePunctuation: true,
   },
   computed: {
     groups: function () {
@@ -20,7 +25,8 @@ new Vue({
         var char = message[i]
 
         if (isWhitespace(char)) { continue }
-
+        if (this.shouldRemovePunctuation && isPunctuation(char)) { continue }
+        
         if (char in dict) {
           dict[char] += 1
         } else {
