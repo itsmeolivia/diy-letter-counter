@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <title>Letter Counter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <link href="vendor/bootstrap.min.css" rel="stylesheet">
+  <style>
+
+  /* TODO: uncomment this when adding Vue.js
+  [v-cloak] {
+    display: none;
+  }
+  */
+  
+  </style>
+
+</head>
+<body>
+
+  <nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+      <span class="navbar-brand">Letter Counter</span>
+    </div>
+  </nav>
+
+  <form class="container">
+    <div class="form-group">
+      <input type="text" class="form-control lg" placeholder="It's me" autofocus>
+    </div>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Count</th>
+          <th>Letters</th>
+        </tr>
+      </thead>
+
+      <tbody v-cloak>
+        <tr>
+          <td>3</td>
+          <td>e</td>
+        </tr>
+
+        <tr>
+          <td>2</td>
+          <td>r, t</td>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>n, o, u, x, j</td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+
+  <script src="vendor/vue.min.js"></script>
+
+</body>
+</html>
